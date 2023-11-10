@@ -10,7 +10,7 @@ generator pothos {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URI")
+  url      = "file:./dev.db"
 }
 
 model Hero {

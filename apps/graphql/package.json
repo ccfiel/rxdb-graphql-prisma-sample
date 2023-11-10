@@ -9,6 +9,8 @@
     "build": "npm -s run check && npm -s run clean && npm -s run generate && tsc",
     "generate": "prisma generate",
     "pull": "prisma db pull",
+    "createdb": "prisma db push",
+    "seed": "prisma db seed",
     "lint": "eslint --ext .js,.ts .",
     "format": "eslint --fix --ext .js,.ts . && prettier --ignore-path .eslintignore --write \"**/*.+(js|ts|json)\"",
     "check": "npm -s run lint && prettier --ignore-path .eslintignore --check \"**/*.+(js|ts|json)\"",

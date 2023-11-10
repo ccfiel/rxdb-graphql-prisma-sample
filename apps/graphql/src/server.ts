@@ -11,22 +11,25 @@ import 'dotenv/config';
 
 export const pubsub = new PubSub();
 async function getUserFromAuthHeader(authHeader: string): Promise<User | null> {
-  if (authHeader) {
-    const [type, token] = authHeader.split(' ');
-    let currentUser: User | null = null;
+  // This where you would validate the token
+  // if (authHeader) {
+  //   const [type, token] = authHeader.split(' ');
+  //   let currentUser: User | null = null;
+  //   if (type !== 'Bearer') {
+  //     return null;
+  //   } else {
+  //     if (token === 'fe65d9a5-e5b2-43d4-90e7-86b2425ed943') {
+  //       currentUser = new User('1', 'juan@test.com', token);
+  //     }
+  //   }
+  //   return currentUser;
+  // } else {
+  //   console.error('No auth header found');
+  //   return null;
+  // }
 
-    if (type !== 'Bearer') {
-      return null;
-    } else {
-      if (token === 'fe65d9a5-e5b2-43d4-90e7-86b2425ed943') {
-        currentUser = new User('1', 'juan@test.com', token);
-      }
-    }
-    return currentUser;
-  } else {
-    console.error('No auth header found');
-    return null;
-  }
+  // this is just temporary returning a user
+  return new User('1', 'juan@test.com', '12345');
 }
 
 const yoga = createYoga({

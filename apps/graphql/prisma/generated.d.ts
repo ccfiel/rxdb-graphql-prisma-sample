@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, Hero } from "D:\\cashiering\\rxdb-sample\\rxdb-sample\\node_modules\\.pnpm\\@prisma+client@5.5.2_prisma@5.5.2\\node_modules\\@prisma\\client";
+import type { Prisma, Hero } from "/Users/chrisianfiel/rxdb-sample/node_modules/.pnpm/@prisma+client@5.5.2_prisma@5.5.2/node_modules/@prisma/client";
 export default interface PrismaTypes {
     Hero: {
         Name: "Hero";
