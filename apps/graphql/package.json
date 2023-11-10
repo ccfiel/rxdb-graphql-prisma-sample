@@ -1,0 +1,73 @@
+{
+  "name": "kahero-graphql-server",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
+    "start": "node dist/server",
+    "clean": "rm -rf dist",
+    "build": "npm -s run check && npm -s run clean && npm -s run generate && tsc",
+    "generate": "prisma generate",
+    "pull": "prisma db pull",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "eslint --fix --ext .js,.ts . && prettier --ignore-path .eslintignore --write \"**/*.+(js|ts|json)\"",
+    "check": "npm -s run lint && prettier --ignore-path .eslintignore --check \"**/*.+(js|ts|json)\"",
+    "version": "sed -i 's/#{VERSION}/'$VERSION'/g' src/schemas/Version/queries.ts",
+    "local": "npm run format",
+    "workers": "ts-node-dev --no-notify --respawn --transpile-only src/workers.ts"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@pothos/core": "^3.38.0",
+    "@pothos/plugin-directives": "^3.10.2",
+    "@pothos/plugin-prisma": "^3.61.0",
+    "@pothos/plugin-prisma-utils": "^0.13.0",
+    "@pothos/plugin-relay": "^3.44.0",
+    "@pothos/plugin-scope-auth": "^3.20.0",
+    "@pothos/plugin-simple-objects": "^3.7.0",
+    "@pothos/plugin-smart-subscriptions": "^3.7.1",
+    "@prisma/client": "5.5.2",
+    "dotenv": "^16.3.1",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "graphql": "16.8.1",
+    "graphql-scalars": "1.22.4",
+    "graphql-yoga": "5.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
+    "prisma": "^5.5.2",
+    "rxdb": "^15.0.0-beta.19",
+    "rxjs": "^7.8.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "graphql-subscriptions": "^2.0.0",
+    "is-ci": "^3.0.1",
+    "prettier": "^3.0.3",
+    "prisma": "5.5.2",
+    "ts-node": "10.9.1",
+    "ts-node-dev": "2.0.0",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator pothos {
+  provider    = "prisma-pothos-types"
+  output      = "./generated.d.ts"
+  prismaUtils = "true"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URI")
+}
+
+model Hero {
+  id        String      @id @default(uuid())
+  name      String
+  color     String
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
