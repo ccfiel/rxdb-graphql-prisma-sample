@@ -1,6 +1,10 @@
 # RxDB Example code using GraphQL
 
-This project is a sample implementation demonstrating the integration of RxDB, a real-time, offline-first database, with GraphQL and Prisma. It provides a practical example of how these technologies can be used together to build robust, scalable applications.
+This project is a sample implementation demonstrating the integration of RxDB, a real-time, offline-first database, with GraphQL and Prisma. It provides a practical example of how these technologies can build robust, scalable applications.
+
+<img width="1427" alt="SCR-20231110-mdic" src="https://github.com/ccfiel/rxdb-graphql-prisma-sample/assets/1788360/6a099d96-cd3a-4c3d-a1ab-6a64377b904d">
+
+
 
 ## Using this example
 
