@@ -29,6 +29,7 @@ pnpm dev
 ## URL and Server ports?
 
 Server http://localhost:3001
+
 Client http://localhost:5174
 
 
